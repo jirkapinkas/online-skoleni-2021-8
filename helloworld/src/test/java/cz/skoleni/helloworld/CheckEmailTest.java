@@ -17,6 +17,9 @@ class CheckEmailTest {
     @Test
     void isEmailValid() {
         assertTrue(checkEmail.isEmail("jirka.pinkas@gmail.com"));
+        assertTrue(checkEmail.isEmail("1jirka.pinkas@gmail.com"));
+        assertTrue(checkEmail.isEmail("123@gmail.com"));
+        assertTrue(checkEmail.isEmail("123@127.0.0.1"));
     }
 
     @Test
