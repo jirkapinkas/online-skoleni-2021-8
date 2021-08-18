@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -35,6 +36,16 @@ public class Main {
 //        } catch (Exception e) {
 //            log.error("Error reading file: " + fileName, e);
 //        }
+
+        Dog dog = new Dog("Hafik");
+        System.out.println(dog.toString());
+
+        List<String> strings1 = Arrays.asList("A", "B", "C");
+        System.out.println(strings1);
+
+        String[] strings2 = new String[] {"A", "B", "C"};
+        System.out.println(strings2); // staticke pole ma toString vypis naprd
+        System.out.println(Arrays.asList(strings2)); // List ma inteligentni toString
     }
 
 }
