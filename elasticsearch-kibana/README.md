@@ -1,3 +1,6 @@
+V adresari kde se nachazi docker-compose.yml volame vsechny docker a docker-compose prikazy:
+
+
 # Spusteni:
 
     docker-compose up -d
@@ -18,6 +21,10 @@ Je nutné nastavit URL: http://localhost:9200 a index: kibana_sample_data_logs
 # Jenom vypnout (bez smazani): 
 
     docker-compose stop
+
+# Jenom zapnout (napriklad po restartu): 
+
+    docker-compose start
 
 # Vycisteni mista na disku:
 
