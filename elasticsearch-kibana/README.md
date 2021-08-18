@@ -18,16 +18,17 @@ Je nutné nastavit URL: http://localhost:9200 a index: kibana_sample_data_logs
 
     docker-compose down
 
-# Jenom vypnout (bez smazani): 
+# Jenom vypnout (bez smazani). Poznamka: Staci i restartovat pocitac, neni nastaveny autostart u kontejneru: 
 
     docker-compose stop
 
-# Jenom zapnout (napriklad po restartu): 
+# Jenom zapnout (napriklad po restartu pocitace): 
 
     docker-compose start
 
 # Vycisteni mista na disku:
 
+    docker-compose down
     docker image prune --all
     docker volume prune
     docker system prune
