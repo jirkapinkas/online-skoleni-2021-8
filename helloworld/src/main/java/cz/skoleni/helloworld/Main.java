@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -46,6 +47,9 @@ public class Main {
         String[] strings2 = new String[] {"A", "B", "C"};
         System.out.println(strings2); // staticke pole ma toString vypis naprd
         System.out.println(Arrays.asList(strings2)); // List ma inteligentni toString
+
+        List<String> col = new ArrayList<>();
+        var col2 = new ArrayList<String>(); // Od Java 10
     }
 
 }
