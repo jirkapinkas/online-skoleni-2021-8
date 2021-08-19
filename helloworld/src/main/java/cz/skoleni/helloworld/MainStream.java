@@ -2,6 +2,7 @@ package cz.skoleni.helloworld;
 
 import java.text.Collator;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class MainStream {
 
@@ -18,11 +19,17 @@ public class MainStream {
 //        dogs.forEach(System.out::println);
 
         // Co chceme: utridit pejsky & vypsat jejich jmena
-        dogs.stream()
-                // pred prave jednou terminalni operaci, ktera je na konci muze byt mnoho intermediate operaci
+//        dogs.stream()
+//                // pred prave jednou terminalni operaci, ktera je na konci muze byt mnoho intermediate operaci
+//                .sorted(Comparator.comparing(Dog::getName, Collator.getInstance(Locale.forLanguageTag("CS_cz"))))
+//                .map(Dog::getName) // operace "map" transformuje prvek ve streamu
+//                .forEach(System.out::println); // terminalni operace (na konci streamu JE PRAVE JEDNA TERMINALNI OPERACE)
+
+        List<String> dogNames = dogs.stream()
                 .sorted(Comparator.comparing(Dog::getName, Collator.getInstance(Locale.forLanguageTag("CS_cz"))))
-                .map(Dog::getName) // operace "map" transformuje prvek ve streamu
-                .forEach(System.out::println); // terminalni operace (na konci streamu JE PRAVE JEDNA TERMINALNI OPERACE)
+                .map(Dog::getName)
+                .collect(Collectors.toList());
+        System.out.println(dogNames);
     }
 
 }
