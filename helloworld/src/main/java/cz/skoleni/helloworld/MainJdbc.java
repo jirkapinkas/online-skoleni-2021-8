@@ -40,6 +40,24 @@ public class MainJdbc {
                     .build();
         });
         items.forEach(System.out::println);
+
+//        for (int x = 0; x < 100; x++) {
+//            new Thread(() -> {
+//                while(true) {
+//                    jdbcTemplate.query("select * from item", (rs, i) -> {
+//                        return Item.builder()
+//                                .name(rs.getString("name"))
+//                                .price(rs.getDouble("price"))
+//                                .build();
+//                    }); //.forEach(System.out::println);
+//                    try {
+//                        Thread.sleep(100);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }).start();
+//        }
     }
 
 }
