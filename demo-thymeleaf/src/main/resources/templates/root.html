@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World</title>
+</head>
+<body>
+
+<h1>Items:</h1>
+
+<ul>
+    <li th:each="item : ${items}" th:text="${item.name}"></li>
+</ul>
+
+<br />
+<div th:text="${itemsSize}"></div>
+
+</body>
+</html>
