@@ -9,6 +9,13 @@ public class MainParallelStream {
         // microbenchmarking se spravne dela pomoci JMH (Java Microbenchmark Harness)
         // https://www.baeldung.com/java-microbenchmark-harness
         // http://tutorials.jenkov.com/java-performance/jmh.html
+
+        // Parallel stream pouziva pool vlaken,
+        // ktery je jeden per jedna instance JVM
+
+        // Pocet vlaken v poolu vlaken parallelniho streamu:
+        // "POCET JADER PROCESORU - 1"
+
         long millis = System.currentTimeMillis();
         String string = IntStream.range(0, 100)
                 .parallel()
@@ -17,6 +24,12 @@ public class MainParallelStream {
                 .collect(Collectors.joining(", "));
         System.out.println(System.currentTimeMillis() - millis);
         System.out.println(string);
+
+        IntStream.range(0, 100)
+                .parallel()
+                .forEach(i -> {
+                    System.out.println("sending email .... " + i);
+                });
     }
 
 }
